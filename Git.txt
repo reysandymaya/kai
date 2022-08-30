@@ -1,0 +1,133 @@
+#################################First login to server##################################
+sudo su
+yum update -y
+yum install git -y
+git version
+git init
+touch sample.txt
+git add sample.txt
+git status
+git commit -m " message name"
+git log
+git branch
+git checkout -b branch name
+git branch -l
+touch test.txt
+cat > test.txt
+git add test.txt
+git commit -m " testfile"
+ls -lrth
+touch Myfile.txt
+vi Myfile.txt
+git add Myfile.txt
+git commit -m "Myfile"
+git branch
+####################################Login to Git Hub #########################################
+*************Create Repostory 
+On server
+git remote add origin  https://github.com/suriyadav2009/Ops.git
+## Branch-1 #####
+git branch
+Need to provide branch to push 
+git push origin branch name 
+Username for 'https://github.com':  " Give Git hub user name"
+Password for 'https:// suriyadav2009@github.com': " Need to provide Token Value "
+## Branch-2 #####
+********Need to provide branch to push 
+git push origin branch name 
+Username for 'https://github.com':  " Give Git hub user name"
+## Branch-3 #####
+******Need to provide branch to push 
+git push origin branch name 
+Username for 'https://github.com':  " Give Git hub user name"
+Password for 'https:// suriyadav2009@github.com': " Need to provide Token Value "
+###############################Using Password less Authentication ###########################
+ cd ~/.ssh/
+ ls -lrth
+ ****Generate key 
+ ssh-keygen
+ [root@ip-172-31-1-17 .ssh]# ssh-keygen
+Generating public/private rsa key pair.
+*****Enter without Values
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+ls -lrth
+cat id_rsa.pub
+***** Loogin to Git hub >> settings>>SSH and GPG keys>> New SSH Key 
+paste the key file from id_rsa.pub
+
+######################### Login to Server #############################
+cd /root/
+touch  first.txt
+git add first.txt
+git commit -m "firstfile"
+git push origin master
+[root@ip-172-31-1-17 ~]# git push origin master
+Username for 'https://github.com': suriyadav2009
+Password for 'https://suriyadav2009@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-g                                                                                        it/about-remote-repositories#cloning-with-https-urls for information on currentl                                                                                        y recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/suriyadav2009/Ops.git/'
+[root@ip-172-31-1-17 ~]# git remote -v
+origin  https://github.com/suriyadav2009/Ops.git (fetch)
+origin  https://github.com/suriyadav2009/Ops.git (push)
+[root@ip-172-31-1-17 ~]# git remote add origin git@github.com:suriyadav2009/Ops.                                                                                        git
+error: remote origin already exists.
+[root@ip-172-31-1-17 ~]#
+[root@ip-172-31-1-17 ~]#
+[root@ip-172-31-1-17 ~]# git remote set-url origin git@github.com:suriyadav2009/                                                                                        Ops.git
+[root@ip-172-31-1-17 ~]# git remote -v
+origin  git@github.com:suriyadav2009/Ops.git (fetch)
+origin  git@github.com:suriyadav2009/Ops.git (push)
+[root@ip-172-31-1-17 ~]# git push origin master
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+ECDSA key fingerprint is MD5:7b:99:81:1e:4c:91:a5:0d:5a:2e:2e:80:13:3f:24:ca.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,20.207.73.82' (ECDSA) to the list of know                                                                                        n hosts.
+To github.com:suriyadav2009/Ops.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:suriyadav2009/Ops.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+touch file name 
+git add file name
+git commit -v  file name 
+[root@ip-172-31-1-17 ~]# git remote set-url origin git@github.com:suriyadav2009/Hyd.git
+[root@ip-172-31-1-17 ~]# git branch
+* Ops
+  dev
+  master
+[root@ip-172-31-1-17 ~]# git push origin Ops
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (14/14), 1.14 KiB | 1.14 MiB/s, done.
+Total 14 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+remote:
+remote: Create a pull request for 'Ops' on GitHub by visiting:
+remote:      https://github.com/suriyadav2009/Hyd/pull/new/Ops
+remote:
+To github.com:suriyadav2009/Hyd.git
+ * [new branch]      Ops -> Ops
+[root@ip-172-31-1-17 ~]#
+
+
+[
+
+
+
+
+
+
+
+
+
+
+ 
+ 
